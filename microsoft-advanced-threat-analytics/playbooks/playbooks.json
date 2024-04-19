@@ -1,0 +1,297 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "8a27f3d3-ad90-4574-a3f9-661ba20d8397",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "67d359a9-1902-408a-ac36-596fa37a0c16",
+          "collection": "/api/3/workflow_collections/8a27f3d3-ad90-4574-a3f9-661ba20d8397",
+          "steps": [
+            {
+              "uuid": "cac2c28d-6af1-4976-854c-ea05ad4d2ab2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "dcb00f66-c8a0-4ff5-858d-aae8c765b08b",
+              "@type": "WorkflowStep",
+              "name": "Get Suspicious Activities List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Microsoft Advanced Threat Analytics",
+                "config": "",
+                "params": {
+                  "activity_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "microsoft-advanced-threat-analytics",
+                "operation": "get_suspicious_activities_list",
+                "operationTitle": "Get Suspicious Activities List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the suspicious activities by the activity ID, status, severity from Microsoft Advanced Threat Analytics.",
+          "name": "Get Suspicious Activities List",
+          "tag": "#Microsoft Advanced Threat Analytics",
+          "recordTags": [
+            "Microsoft",
+            "microsoft-advanced-threat-analytics"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cac2c28d-6af1-4976-854c-ea05ad4d2ab2",
+          "routes": [
+            {
+              "uuid": "cb842c0a-26e3-4692-843b-bf4c676be550",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Suspicious Activities List",
+              "sourceStep": "/api/3/workflow_steps/cac2c28d-6af1-4976-854c-ea05ad4d2ab2",
+              "targetStep": "/api/3/workflow_steps/dcb00f66-c8a0-4ff5-858d-aae8c765b08b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8441a8ec-11a9-44df-8892-33d1d3ccd358",
+          "collection": "/api/3/workflow_collections/8a27f3d3-ad90-4574-a3f9-661ba20d8397",
+          "steps": [
+            {
+              "uuid": "e8fd0a78-a0d3-44ab-9224-17db9c75a8d4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "335638f1-1906-4196-ac20-83c2e0d1b860",
+              "@type": "WorkflowStep",
+              "name": "Set Suspicious Activity Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Microsoft Advanced Threat Analytics",
+                "config": "",
+                "params": {
+                  "activity_id": "",
+                  "status": ""
+                },
+                "version": "1.0.0",
+                "connector": "microsoft-advanced-threat-analytics",
+                "operation": "set_suspicious_activity_status",
+                "operationTitle": "Set Suspicious Activity Status"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Sets status of suspicious activity by the activity ID, status in Microsoft Advanced Threat Analytics.",
+          "name": "Set Suspicious Activity Status",
+          "tag": "#Microsoft Advanced Threat Analytics",
+          "recordTags": [
+            "Microsoft",
+            "microsoft-advanced-threat-analytics"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e8fd0a78-a0d3-44ab-9224-17db9c75a8d4",
+          "routes": [
+            {
+              "uuid": "c8a39fcd-4deb-42ca-8701-4dd8b8a055e0",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Suspicious Activity Status",
+              "sourceStep": "/api/3/workflow_steps/e8fd0a78-a0d3-44ab-9224-17db9c75a8d4",
+              "targetStep": "/api/3/workflow_steps/335638f1-1906-4196-ac20-83c2e0d1b860"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "18a1b283-fb12-4e0f-9c13-2b77de755ce6",
+          "collection": "/api/3/workflow_collections/8a27f3d3-ad90-4574-a3f9-661ba20d8397",
+          "steps": [
+            {
+              "uuid": "7e49727c-eb9b-4dad-99b4-d951931775bf",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "ce0eb769-84a3-4022-adb6-97af37e42bd0",
+              "@type": "WorkflowStep",
+              "name": "Get Monitoring Alerts List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Microsoft Advanced Threat Analytics",
+                "config": "",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "microsoft-advanced-threat-analytics",
+                "operation": "get_monitoring_alerts_list",
+                "operationTitle": "Get Monitoring Alerts List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Sets status of suspicious activity by the activity ID, status in Microsoft Advanced Threat Analytics.",
+          "name": "Get Monitoring Alerts List",
+          "tag": "#Microsoft Advanced Threat Analytics",
+          "recordTags": [
+            "Microsoft",
+            "microsoft-advanced-threat-analytics"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7e49727c-eb9b-4dad-99b4-d951931775bf",
+          "routes": [
+            {
+              "uuid": "994a9bd1-d4ce-464a-be67-b8ebbf58a664",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Monitoring Alerts List",
+              "sourceStep": "/api/3/workflow_steps/7e49727c-eb9b-4dad-99b4-d951931775bf",
+              "targetStep": "/api/3/workflow_steps/ce0eb769-84a3-4022-adb6-97af37e42bd0"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8a4d26c0-b2aa-448b-8452-a4229b74ed1e",
+          "collection": "/api/3/workflow_collections/8a27f3d3-ad90-4574-a3f9-661ba20d8397",
+          "steps": [
+            {
+              "uuid": "3e0c1f25-eb11-4536-b456-c3decff0d9aa",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "7f4d7d4b-7622-4575-b76a-981038ba1c05",
+              "@type": "WorkflowStep",
+              "name": "Get Entity",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Microsoft Advanced Threat Analytics",
+                "config": "",
+                "params": {
+                  "entity_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "microsoft-advanced-threat-analytics",
+                "operation": "get_entity",
+                "operationTitle": "Get Entity"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the information of specific entity from Microsoft Advanced Threat Analytics.",
+          "name": "Get Entity",
+          "tag": "#Microsoft Advanced Threat Analytics",
+          "recordTags": [
+            "Microsoft",
+            "microsoft-advanced-threat-analytics"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3e0c1f25-eb11-4536-b456-c3decff0d9aa",
+          "routes": [
+            {
+              "uuid": "0d586b81-c5b1-45b3-bd35-5139a312d4b8",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entity",
+              "sourceStep": "/api/3/workflow_steps/3e0c1f25-eb11-4536-b456-c3decff0d9aa",
+              "targetStep": "/api/3/workflow_steps/7f4d7d4b-7622-4575-b76a-981038ba1c05"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Microsoft Advanced Threat Analytics - 1.0.0",
+      "description": "Microsoft Advanced Threat Analytics (ATA) is an on-premises platform that helps protect your enterprise from multiple types of advanced targeted cyber attacks and insider threats.",
+      "visible": true,
+      "recordTags": [
+        "Microsoft",
+        "microsoft-advanced-threat-analytics"
+      ]
+    }
+  ]
+}

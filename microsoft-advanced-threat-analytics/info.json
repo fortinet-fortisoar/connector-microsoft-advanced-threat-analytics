@@ -74,7 +74,7 @@
           "visible": true,
           "required": true,
           "tooltip": "Specify the ID of the suspicious activity.",
-          "description": "Specify the ID of the suspicious activity to retrieve. If provided, all other arguments will be ignored."
+          "description": "Specify the ID of the suspicious activity to retrieve."
         }
       ],
       "output_schema": {}

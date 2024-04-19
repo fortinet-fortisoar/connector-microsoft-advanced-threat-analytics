@@ -15,10 +15,10 @@ class MicrosoftAdvancedThreatAnalytics(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
             operation = operations.get(operation)
+            return operation(config, params)
         except Exception as err:
             logger.exception(err)
             raise ConnectorError(err)
-        return operation(config, params)
 
     def check_health(self, config):
         logger.info('starting health check')

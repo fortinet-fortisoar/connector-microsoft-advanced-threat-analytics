@@ -30,7 +30,7 @@ def make_api_call(method="GET", endpoint="", config=None, params=None, data=None
         else:
             if response.text != "":
                 err_resp = response.json()
-                failure_msg = err_resp['errors']
+                failure_msg = err_resp.get('errors')
                 error_msg = 'Response [{0}:{1} Details: {2}]'.format(response.status_code, response.reason,
                                                                      failure_msg if failure_msg else '')
             else:

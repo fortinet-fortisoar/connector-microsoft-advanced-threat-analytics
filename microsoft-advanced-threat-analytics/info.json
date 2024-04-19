@@ -19,6 +19,7 @@
         "editable": true,
         "visible": true,
         "required": true,
+        "tooltip": "Microsoft Advanced Threat Analytics server URL. e.g., https://atacenter.contoso.com",
         "description": "Specify the Microsoft Advanced Threat Analytics server URL to connect and perform the automated operations.",
         "placeholder": "https://atacenter.contoso.com"
       },
@@ -29,6 +30,7 @@
         "editable": true,
         "visible": true,
         "required": true,
+        "tooltip": "Username for the Microsoft Advanced Threat Analytics.",
         "description": "Specify the Microsoft Advanced Threat Analytics username to connect and perform the automated operations."
       },
       {
@@ -38,6 +40,7 @@
         "editable": true,
         "visible": true,
         "required": true,
+        "tooltip": "Password for the Microsoft Advanced Threat Analytics.",
         "description": "Specify the Microsoft Advanced Threat Analytics password to connect and perform the automated operations.."
       },
       {
@@ -48,6 +51,7 @@
         "visible": true,
         "required": false,
         "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified.",
         "description": "Specifies whether the SSL certificate for the server is to be verified. \nBy default, this option is set to True."
       }
     ]
@@ -111,7 +115,7 @@
       "operation": "get_monitoring_alerts_list",
       "title": "Get Monitoring Alerts List",
       "annotation": "get_monitoring_alerts_list",
-      "description": "Sets status of suspicious activity by the activity ID, status in Microsoft Advanced Threat Analytics.",
+      "description": "Retrieves the monitoring alerts from Microsoft Advanced Threat Analytics.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
